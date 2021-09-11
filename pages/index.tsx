@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import { promises as fs } from 'fs';
 import matter from 'gray-matter';
 import { GetStaticProps } from 'next';
+import Head from 'next/head';
 import Link from 'next/link';
 import path from 'path';
 
@@ -26,6 +27,12 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = ({ posts }) => {
   return (
     <>
+      <Head>
+        <html lang="en" />
+        <title>Mike Holloway</title>
+        <meta name="description" content="A site dedicated to thoughts and ideas." />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <section>
         <BookOpenIcon className="-ml-2 w-8 h-8 text-yellow-400" />
         <div className="mt-8 relative mx-auto divide-y-2 divide-gray-200">

@@ -28,7 +28,12 @@ export const Carousel = forwardRef<unknown, CarouselProps>(({ options, children 
   const bullets = useMemo(
     () =>
       Array.from(Array(React.Children.count(children))).map((count, idx) => (
-        <button key={`bullet-${idx}`} className="glide__bullet" data-glide-dir={`=${idx}`}></button>
+        <button
+          key={`bullet-${idx}`}
+          className="glide__bullet"
+          data-glide-dir={`=${idx}`}
+          aria-label={`Show carousel image ${idx + 1}`}
+        ></button>
       )),
     [children]
   );
@@ -36,7 +41,7 @@ export const Carousel = forwardRef<unknown, CarouselProps>(({ options, children 
   return (
     <div className="glide" ref={sliderRef}>
       <div className="glide__track" data-glide-el="track">
-        <ul className="glide__slides">{children}</ul>
+        <div className="glide__slides">{children}</div>
       </div>
       <div className="glide__bullets" data-glide-el="controls[nav]">
         {bullets}
@@ -47,11 +52,11 @@ export const Carousel = forwardRef<unknown, CarouselProps>(({ options, children 
 
 Carousel.displayName = 'Carousel';
 
-export const Slide = forwardRef<HTMLLIElement, unknown>(({ children }, ref) => {
+export const Slide = forwardRef<HTMLDivElement, unknown>(({ children }, ref) => {
   return (
-    <li className="glide__slide" ref={ref}>
+    <div className="glide__slide" ref={ref}>
       {children}
-    </li>
+    </div>
   );
 });
 

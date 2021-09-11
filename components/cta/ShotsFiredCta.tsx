@@ -19,27 +19,27 @@ export function ShotsFiredCta() {
     <div className="bg-gray-700 rounded-lg shadow-2xl w-full">
       <Carousel options={glideOptions} ref={glideRef}>
         <img
-          src="/content/projects/shots-fired/screenshot1.jpg"
+          src="/content/projects/shots-fired/screenshot1.webp"
           className="w-full h-full object-cover rounded-t-lg"
           alt=""
         />
         <img
-          src="/content/projects/shots-fired/screenshot2.jpg"
+          src="/content/projects/shots-fired/screenshot2.webp"
           className="w-full h-full object-cover rounded-t-lg"
           alt=""
         />
         <img
-          src="/content/projects/shots-fired/screenshot3.jpg"
+          src="/content/projects/shots-fired/screenshot3.webp"
           className="w-full h-full object-cover rounded-t-lg"
           alt=""
         />
         <img
-          src="/content/projects/shots-fired/screenshot4.jpg"
+          src="/content/projects/shots-fired/screenshot4.webp"
           className="w-full h-full object-cover rounded-t-lg"
           alt=""
         />
         <img
-          src="/content/projects/shots-fired/screenshot5.jpg"
+          src="/content/projects/shots-fired/screenshot5.webp"
           className="w-full h-full object-cover rounded-t-lg"
           alt=""
         />

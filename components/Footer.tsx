@@ -12,21 +12,25 @@ export function Footer() {
       <ul className="flex space-x-8">
         <li>
           <a href="https://www.instagram.com/artdevgame" target="_blank" rel="noopener noreferrer">
+            <span className="sr-only">Instagram</span>
             <InstagramSvg className="text-gray-400 fill-current h-5 w-5" />
           </a>
         </li>
         <li>
           <a href="https://www.twitch.tv/artdevgame" target="_blank" rel="noopener noreferrer">
+            <span className="sr-only">Twitch</span>
             <TwitchSvg className="text-gray-400 fill-current h-5 w-5" />
           </a>
         </li>
         <li>
           <a href="https://github.com/artdevgame" target="_blank" rel="noopener noreferrer">
+            <span className="sr-only">GitHub</span>
             <GithubSvg className="text-gray-400 fill-current h-5 w-5" />
           </a>
         </li>
         <li>
           <a href="https://twitter.com/artdevgame" target="_blank" rel="noopener noreferrer">
+            <span className="sr-only">Twitter</span>
             <TwitterSvg className="text-gray-400 fill-current h-5 w-5" />
           </a>
         </li>

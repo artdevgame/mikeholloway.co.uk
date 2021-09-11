@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Head from 'next/head';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 
@@ -26,6 +27,13 @@ const Recommendation = ({ children, title, url }: RecommendationProps) => {
 const Recommendations: NextPage = () => {
   return (
     <>
+      <Head>
+        <html lang="en" />
+        <title>Recommendations | Mike Holloway</title>
+        <meta name="description" content="A site dedicated to thoughts and ideas." />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <HomeButton />
 
       <div className="prose lg:prose-lg mb-12">

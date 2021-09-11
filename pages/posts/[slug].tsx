@@ -17,6 +17,7 @@ const Page: NextPage<Props> = ({ content, data: frontmatter }) => {
   return (
     <>
       <Head>
+        <html lang="en" />
         <title>{frontmatter.title} | Mike Holloway</title>
         <meta name="description" content="A site dedicated to thoughts and ideas." />
         <link rel="icon" href="/favicon.ico" />
