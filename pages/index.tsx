@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';
+import type { NextPage } from "next";
 import { promises as fs } from 'fs';
 import matter from 'gray-matter';
 import { GetStaticProps } from 'next';
@@ -28,10 +28,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
   return (
     <>
       <Head>
-        <html lang="en" />
         <title>Mike Holloway</title>
-        <meta name="description" content="A site dedicated to thoughts and ideas." />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <section>
         <BookOpenIcon className="-ml-2 w-8 h-8 text-yellow-400" />
@@ -44,8 +41,12 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
                 </p>
                 <Link href={`/posts/${post.slug}`}>
                   <a className="mt-2 block">
-                    <p className="text-xl font-semibold text-gray-900">{post.title}</p>
-                    <p className="mt-3 text-base text-gray-500">{post.description}</p>
+                    <p className="text-xl font-semibold text-gray-900">
+                      {post.title}
+                    </p>
+                    <p className="mt-3 text-base text-gray-500">
+                      {post.description}
+                    </p>
                   </a>
                 </Link>
               </div>
@@ -65,19 +66,19 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const contentDirectory = path.join(process.cwd(), 'content');
+  const contentDirectory = path.join(process.cwd(), "content");
   const filenames = await fs.readdir(contentDirectory);
 
   const postsPromise = filenames.map(async (filename) => {
     const filePath = path.resolve(contentDirectory, filename);
-    const content = await fs.readFile(filePath, 'utf8');
+    const content = await fs.readFile(filePath, "utf8");
 
     const { data: frontmatter } = matter(content);
 
     return {
       ...frontmatter,
-      date: dayjs(frontmatter.dateTime).format('ddd Do MMMM, YYYY'),
-      slug: filename.replace('.md', ''),
+      date: dayjs(frontmatter.dateTime).format("ddd Do MMMM, YYYY"),
+      slug: filename.replace(".md", ""),
     } as Post;
   });
 
